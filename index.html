@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/c9f8a4022c.js" crossorigin="anonymous"></script>
+    <title>Restaurant Recommender</title>
+</head>
+
+<body>
+    <button id="dark-mode-toggle">
+        Toggle Dark Mode
+        <i class="fa-solid fa-lightbulb"></i>
+    </button>
+
+    <div id="top-bar">
+        <div id="header">
+            <img id="logo" src="logo.png" alt="Restaurant Recommender Logo">
+            <h1 id="header-text">Restaurant Recommender</h1>
+        </div>
+        
+        </div>
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Search for restaurants...">
+        <button id="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <div class="location-options">
+            <input type="text" id="zip-code" placeholder="ZIP Code">
+            <button id="location-button">Use My Location</button>
+        </div>
+    </div>
+    <div id="ai-search-container">
+        <div class="ai-search-wrapper">
+            <input type="text" id="ai-search-bar" placeholder="Gemini Powered: Recommend Me A Restaurant">
+            <button id="ai-search-button">
+                <span class="ai-icon">🤖</span>
+                Get AI Recommendation
+            </button>
+        </div>
+        <div id="ai-response" class="hidden">
+            <div class="ai-response-content"></div>
+            <button id="use-recommendation" class="hidden">Use This Recommendation</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="box" id="allergy-settings">
+                <h2>Diet Restrictions</h2>
+                <div>
+                    <label><input type="checkbox" class="diet-checkbox" id="vegetarian"> Vegetarian</label>
+                    <label><input type="checkbox" class="diet-checkbox" id="gluten-free"> Gluten-free</label>
+                    <label><input type="checkbox" class="diet-checkbox" id="vegan"> Vegan</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" class="diet-checkbox" id="halal"> Halal</label>
+                    <label><input type="checkbox" class="diet-checkbox" id="kosher"> Kosher</label>
+                </div>
+                <!-- <div>
+                    <label class="spacer"></label>
+                    <label class="spacer"></label>
+                </div> -->
+            </div>
+    
+            <div class="box" id="preferences-settings">
+                <h2>Food Preferences</h2>
+                <div>
+                    <label><input type="checkbox" class="preference-checkbox" id="mexican"> Mexican</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="chinese"> Chinese</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="italian"> Italian</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="indian"> Indian</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" class="preference-checkbox" id="japanese"> Japanese</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="mediterranean"> Mediterranean</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="thai"> Thai</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="french"> French</label>
+                </div>
+                <div>
+                    <label><input type="checkbox" class="preference-checkbox" id="vegetarian"> Vegetarian</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="nordic"> Nordic</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="american"> American</label>
+                    <label><input type="checkbox" class="preference-checkbox" id="korean"> Korean</label>
+                </div>
+            </div>
+
+            <div id="slider-container">
+                <label for="radius">Distance: <span id="radius-label">2 miles</span></label>
+                <input type="range" id="radius-slider" min="1" max="15" step="1" value="2">
+            </div> 
+        </div>
+    
+
+        <!-- Map and Restaurant List below the settings -->
+        <div id="map"></div>
+    </div>
+   <!-- Test restaurant listing 
+    <div style="margin-left: 100px; margin-top: 100px;">
+        <h3 style="">Sushiya</h3>
+        <p>1126 Via Verde, San Dimas</p>
+        <img class="restaurant-image"src="test.jpg" alt="Business image alt" />
+        <div class="description-placeholder">
+            <p class="restaurant-description">Japanese, Sushi Bars</p>
+            <p class="rating-info">Rating: 4.5 ⭐ (100 reviews)</p>
+            <p>$$ | +16507402003</p>
+        </div>
+        <div style="display:flex; align-content: center;">
+            <p class="show-on-map" style="margin-right: 8px;" onclick="showOnMap(${index})">Show on Map</p>
+            <i class="fa-solid fa-location-dot" style="display:flex; align-content:center; padding-top: 5px;"></i>
+        </div>
+    </div> -->
+
+    <div id="restaurant-list"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
