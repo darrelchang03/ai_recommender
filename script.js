@@ -74,8 +74,8 @@ function milesToMeters(miles) {
   return Math.round(miles * 1609.34);
 }
 
-let marker; // Declare marker as a global variable to allow deletion
-let circle; // Keep the existing circle declaration
+let marker; // declare marker as a global variable to allow deletion
+let circle; // keep the existing circle declaration
 
 function createCircleMarker(location) {
   // remove existing marker if it exists
@@ -97,7 +97,7 @@ function createCircleMarker(location) {
     zIndex: 100,
   });
 
-  // Create new circle
+  // create new circle
   circle = new google.maps.Circle({
     map: map,
     radius: milesToMeters(2), // maps api uses meters: converting miles to meters
@@ -119,7 +119,7 @@ function createCircleMarker(location) {
     document.getElementById("zip-code").value = "Current circle area";
 
     
-    // Perform search with new location
+    // perform search with new location
     const radius = document.getElementById("radius-slider").value;
     const allergies = getSelectedDietaryRestrictions();
     const preferences = getSelectedPreferences();
@@ -151,7 +151,7 @@ function handleSearch() {
   const radiusInMeters = milesToMeters(radius);
   const term = searchQuery || preferences || "restaurants";
 
-  // If the zipCode looks like a numeric zip code, convert it to coordinates
+  // if the zipcode looks like a numeric zip code convert it to coordinates
   if (/^\d{5}$/.test(zipCode)) {
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address: zipCode }, (results, status) => {
